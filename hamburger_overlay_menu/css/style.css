@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgba(115, 149, 174,0.5);
+  --secondary-color: #0d221e;
+  --overlay-color: rgba(85, 122, 149,0.8);
+  --time-tran-menu: 1.2s;
+  --time-animation: 1s;
+  --time-tran-x: 0.3s;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  width: 960px;
+  overflow: hidden;
+  margin: auto;
+  padding: 0 3rem;
+}
+
+#showcase {
+  background: var(--primary-color);
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+#showcase::before{
+  content: '';
+  background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+} 
+
+#showcase .showcase-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.showcase-container h1 {
+  font-size: 70px;
+  animation: h1 var(--time-animation) forwards ease-in;
+  transform: translateY(-1200px);
+}
+
+.showcase-container p {
+  font-size: 1.2rem;
+  animation: p var(--time-animation) forwards ease-in 1s;
+  transform: translateX(-2000px);
+}
+
+@keyframes h1 {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes p {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: var(--overlay-color);
+  transition: background 0.5s ease-in;
+  border: none;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+}
+
+
+
+

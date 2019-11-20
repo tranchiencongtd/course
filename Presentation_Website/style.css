@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-1-color: teal;
+  --page-2-color: chocolate;
+  --page-3-color: grey;
+  --page-4-color: green;
+  --time-animation: 1s;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* Utility classes */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f4f4f4;
+  color: #333;
+  border: none;
+  transition: all 0.5s ease-in;
+}
+
+.btn:hover,
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Set background color */
+#page-1 { background: var(--page-1-color);}
+#page-2 { background: var(--page-2-color);}
+#page-3 { background: var(--page-3-color);}
+#page-4 { background: var(--page-4-color);}
+
+
+
+/* set up page */
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.page h1 {
+  font-size: 70px;
+  margin: 2rem;
+  font-weight: bold;
+}
+
+.page p {
+  font-size: 22px;;
+  margin-bottom: 20px;
+}
+
+#page-1 h1 {
+  animation: top-down var(--time-animation) forwards ease-in;
+  transform: translateY(-1200px);
+}
+
+@keyframes top-down {
+  to {
+    transform: translateX(0);
+  }
+}
+
+#page-1 p {
+  animation: left-right var(--time-animation) forwards ease-in 1s;
+  transform: translateX(-2000px);
+}
+
+@keyframes left-right {
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+

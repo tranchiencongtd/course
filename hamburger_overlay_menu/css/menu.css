@@ -1,0 +1,171 @@
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Hamburger line */
+.menu-wrap .hamburger > div {
+  /* uncomment if you want use 1 div */
+  /* position: relative;  */
+  height: 2px;
+  width: 100%;
+  background: #fff; 
+  /* I still dont understand what does this line do ? */
+  /* flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  transition: all var(--time-tran-x) ease-in;
+}
+
+/* this way use for 1 div, and for me I use 3 div */
+/* Hamburger Lines - Top & Bottom */
+/* .menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: inherit;
+  z-index: 1;
+}
+
+/* Move line down 
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+} */
+
+/* Difference way  if u use 1 div*/
+/* Toggler Animation */
+/* .menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines into X */
+/* .menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+} */ 
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+  position: absolute;
+  width: 60%;
+}
+
+/* Turns lines into X */
+.menu-wrap .toggler:checked + .hamburger > div:first-child {
+  position: absolute;
+  transform: rotate(-135deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:last-child {
+  position: absolute;
+  transform: rotate(-135deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* If you use 1 div  comment this line */
+.menu-wrap .toggler:checked:hover + .hamburger > div:last-child {
+  transform: rotate(-225deg);
+}
+
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu  > div {
+  transform: scale(1);
+  transition-duration: var(--time-tran-menu);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.7s ease-in 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  height: 200vw;
+  width: 200vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  border-radius: 50%;
+  flex: none;
+  transition: all 0.5s ease-in;
+}
+
+.menu-wrap .menu > div > div {
+  max-height: 90vh;
+  max-width: 90vw;
+  opacity: 0;
+  /* similar course uncomment this line */ 
+  transition: opacity 1s ease-in;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease-in;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
+}
