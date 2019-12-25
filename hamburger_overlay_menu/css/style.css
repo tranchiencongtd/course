@@ -10,7 +10,7 @@
   --overlay-color: rgba(85, 122, 149,0.8);
   --time-tran-menu: 1.2s;
   --time-animation: 1s;
-  --time-tran-x: 0.3s;
+  --time-tran-x: 0.5s;
 }
 
 body {
